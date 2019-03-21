@@ -16,6 +16,15 @@ $gray-medium-light: #eaeaea;
 // 数値だけでは、すぐにこれがどんな色なのかを判断しにくいです。
 // ここで変数の定義が役に立つ。（Sassが提供する重要な機能）
 
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+// Sassのミックスイン機能を使用しています。
+// この機能を使うと、CSSのルールをパッケージ化して複数の要素に適用することができます（変数として使用するイメージと近いです）。
+
+
 /* universal */
 
 body {
@@ -86,5 +95,52 @@ p {
   &:hover {
     color: white;
     text-decoration: none;
+  }
+}
+
+/* various */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* table */
+
+table {
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;  
+}
+
+th {
+  vertical-align: middle;
+  text-align: center;  
+}
+
+/* form */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
   }
 }
