@@ -1,6 +1,6 @@
 module ApplicationHelper
     
-    # ページごとにタイトルを返す。
+# ページごとにタイトルを返す。
   def full_title(page_title = "")
     base_title = "弓道的中管理"
     if page_title.empty?

@@ -7,9 +7,12 @@
                                'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application',
                                'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/shim' %> <!-- HTML shimがこの1行で済む　パーシャル用のファイル（app/views/layouts/_shim.html.erb）を手動で作成 -->
   </head>
-
   <body>
-    <%= yield %>
+    <%= render 'layouts/header' %> <!-- headerの内容がこの1行で収まる　パーシャル用のファイル（app/views/layouts/_header.html.erb）を手動で作成 -->
+    <div class="container">　<!--class="container"はBootStrapによって意味が与えられる-->
+      <%= yield %>　<!--yieldメソッドはWebアプリのレイアウトにページ毎の内容を挿入する-->
+    </div>
   </body>
 </html>
