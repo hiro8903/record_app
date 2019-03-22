@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in @user
       flash[:success] = "ユーザーの新規作成に成功しました。"
       # Bootstrapではこのようなflashのクラス用に4つのスタイルを持っています。
       # 1. sucsuccess（緑色：保存の成功など） 
