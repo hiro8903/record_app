@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'rails',        '5.1.6'
+gem 'faker',          '1.7.3' # 実際に存在していそうな名前を生成してくれる
+gem 'will_paginate',           '3.1.6' #ページネーション機能を実装することができる
+gem 'bootstrap-will_paginate', '1.0.0' #ページネーションのデザインをお手軽によくする
 gem 'bcrypt',         '3.1.12' # has_secure_passwordを使ってパスワードをハッシュ化するためには、bcryptというgemが必要
 gem 'bootstrap-sass', '3.3.7' # Twitter社が開発したCSSの「フレームワーク」
 gem 'puma',         '3.9.1'

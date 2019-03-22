@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       # ユーザーログイン後にユーザー情報のページにリダイレクトする
       log_in user
-      redirect_to user
+      redirect_back_or user
     else
       # エラーメッセージ用のflashを入れる
       flash.now[:danger] = 'メールアドレスとパスワードの情報が一致しませんでした。' #リダイレクトしない場合はnowを使用する。そうしないと他のページに移動してもflashが消えない。
